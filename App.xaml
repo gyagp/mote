@@ -1,0 +1,50 @@
+<Application x:Class="Mote.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             ShutdownMode="OnExplicitShutdown">
+  <Application.Resources>
+    <SolidColorBrush x:Key="Surface" Color="#202827" />
+    <SolidColorBrush x:Key="SurfaceHover" Color="#2C3834" />
+    <SolidColorBrush x:Key="Stroke" Color="#485B53" />
+    <SolidColorBrush x:Key="Ink" Color="#F1F5F3" />
+    <SolidColorBrush x:Key="Muted" Color="#99ABA2" />
+    <SolidColorBrush x:Key="Accent" Color="#9BE4C3" />
+    <SolidColorBrush x:Key="AccentSurface" Color="#2B4036" />
+    <SolidColorBrush x:Key="Panel" Color="#1B2220" />
+    <SolidColorBrush x:Key="Separator" Color="#34423B" />
+    <Style TargetType="TextBlock">
+      <Setter Property="FontFamily" Value="Segoe UI Variable Text, Segoe UI, Microsoft YaHei UI" />
+      <Setter Property="Foreground" Value="{DynamicResource Ink}" />
+    </Style>
+    <Style x:Key="MenuButton" TargetType="Button">
+      <Setter Property="Foreground" Value="{DynamicResource Ink}" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="Padding" Value="12,10" />
+      <Setter Property="HorizontalContentAlignment" Value="Left" />
+      <Setter Property="FontFamily" Value="Segoe UI Variable Text, Segoe UI, Microsoft YaHei UI" />
+      <Setter Property="FontSize" Value="12" />
+      <Setter Property="Cursor" Value="Hand" />
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Border x:Name="Chrome" Background="{TemplateBinding Background}" CornerRadius="7" Padding="{TemplateBinding Padding}">
+              <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="Center" />
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Chrome" Property="Background" Value="{DynamicResource SurfaceHover}" /></Trigger>
+              <Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="Chrome" Property="Background" Value="{DynamicResource SurfaceHover}" /></Trigger>
+              <Trigger Property="IsPressed" Value="True"><Setter TargetName="Chrome" Property="Opacity" Value="0.7" /></Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="ThemeButton" TargetType="Button" BasedOn="{StaticResource MenuButton}">
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+      <Setter Property="Padding" Value="0,8" />
+      <Setter Property="FontSize" Value="11" />
+      <Setter Property="Margin" Value="2" />
+    </Style>
+  </Application.Resources>
+</Application>

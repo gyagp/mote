@@ -1,0 +1,10 @@
+bin/
+obj/
+dist/
+.vs/
+*.user
+tests/bin/
+tests/obj/
+.release/
+artifacts/diagnostics.json
+artifacts/verification.md
